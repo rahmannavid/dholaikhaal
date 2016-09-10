@@ -9,7 +9,7 @@ class user extends CI_Model{
 
     function login($username, $password)
     {
-       $this -> db -> select('id, email, password');
+       $this -> db -> select('id, name, email, password');
        $this -> db -> from('user');
        $this -> db -> where('email', $username);
        $this -> db -> where('password', $password);

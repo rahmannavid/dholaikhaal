@@ -18,6 +18,26 @@ class account extends CI_Controller {
                 
         $this->load->view('common/footer');
     }
+
+    public function logout() {
+
+        // Removing session data
+        $sess_array = array(
+        'username' => ''
+        );
+        $this->session->unset_userdata('logged_in', $sess_array);
+        
+        $this->load->model('category');
+        $hdata['cat'] = $this->category->get_category();
+        
+        $this->load->view('common/header', $hdata);
+        
+        $data['message_display'] = 'Successfully Logout';
+        $this->load->helper(array('form'));
+        $this->load->view('admin/login', $data);
+                
+        $this->load->view('common/footer');
+    }
     
     public function registration()
     {
