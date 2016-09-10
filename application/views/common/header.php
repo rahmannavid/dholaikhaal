@@ -54,7 +54,7 @@
                         <a href="<?php echo base_url() ?>index.php/auction">Auction</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="<?php echo base_url() ?>index.php/contact">Contact</a>
                     </li>
                 </ul>
                 <ul class="nav pull-right navLogin">
