@@ -2,21 +2,12 @@
 
     <div class="row">
         
-	<h3>
-		
-		<?php
-		
-		  echo $address->company_name  ;
-		  echo "<br>" ;
-		  echo $address->address  ;
-		  echo "<br>" ;
-		  echo $address->email  ;
-		  echo "<br>" ;
-		  echo $address->mobile_no  ;
-		  
-		 
-		 ?>
-	</h3>
+	<h3> <?php echo $address->company_name; ?> </h3>
+	<h4> 
+		  <?php echo $address->address 
+		  .'<br/>Email: ' . $address->email 
+		  .'<br/>Mobile No:'. $address->mobile_no; ?>
+	</h4>
         
     </div>
 
