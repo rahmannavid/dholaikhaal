@@ -28,7 +28,7 @@ class admin extends CI_Controller {
 
             $this->load->model('category');
             $data['cat'] = $this->category->get_category();
-            $this->load->view('admin/category', $data);
+            $this->load->view('admin/admin_category_view', $data);
 
             $this->load->view('admin/common/footer');
         }
@@ -38,6 +38,8 @@ class admin extends CI_Controller {
           redirect('/account/login', 'refresh');
         }
     }
+
+    
    
 }
 
