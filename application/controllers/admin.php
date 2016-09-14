@@ -91,6 +91,28 @@ class admin extends CI_Controller {
         $this->products_model->add_products($data);
         redirect('/admin/products', 'refresh');
     }
+
+    public function product_list()
+    {
+        if($this->session->userdata('logged_in'))
+        {
+            $hdata['title']='Admin-JDM Original';
+            $this->load->view('admin/common/header', $hdata);
+            
+            $this->load->model('product_list_model');
+            $data['product_list'] = $this->product_list_model->get_product_list();
+
+            $this->load->view('admin/admin_product_list_view',$data);
+
+            $this->load->view('admin/common/footer');
+           
+        }
+        else
+        {
+          //If no session, redirect to login page
+          redirect('/account/login', 'refresh');
+        }
+    }
    
 }
 
