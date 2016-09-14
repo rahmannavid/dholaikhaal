@@ -116,3 +116,7 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+div.form input, select, textarea, .btn {
+    margin-bottom: 10px;
+}
