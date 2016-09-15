@@ -23,8 +23,17 @@
                 echo $x ;
                 $x++ ;
                 ?>
-            </td>
-            <td><?php echo $c['cata_id'] ?></td>
+            </td> 
+
+            <td><?php
+                foreach ($product_category as $d) {
+                    if ($d['id']== $c['cata_id']){                        
+                            echo $d['name'] ; break ;
+                    }
+                }
+                ?> 
+            </td>    
+
             <td><?php echo $c['name'] ?></td>        
             <td><?php echo $c['description'] ?></td>     
             <td><?php echo $c['price'] ?></td> 

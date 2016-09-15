@@ -99,9 +99,12 @@ class admin extends CI_Controller {
             $hdata['title']='Admin-JDM Original';
             $this->load->view('admin/common/header', $hdata);
             
-            $this->load->model('product_list_model');
-            $data['product_list'] = $this->product_list_model->get_product_list();
-
+            $this->load->model('products_model');
+            $this->load->model('category');
+            
+            $data['product_list'] = $this->products_model->get_product_list();
+            $data['product_category'] = $this->category->get_category();
+            
             $this->load->view('admin/admin_product_list_view',$data);
 
             $this->load->view('admin/common/footer');

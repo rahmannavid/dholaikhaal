@@ -28,6 +28,14 @@ class products_model extends CI_Model{
         $this->db->insert('product', $data);
        
     }
-    
+
+    function get_product_list(){
+
+        $this->load->database();
+        $query = $this->db->query('SELECT * FROM product');
+        return $query->result_array();
+    }
+
+   
 }
 ?>
