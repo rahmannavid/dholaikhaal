@@ -12,6 +12,7 @@
             <th> Brand</th>
             <th> Country Manufacture</th>
             <th> Type </th>
+            <th> Action </th>
         </tr>
         </thead>
 
@@ -42,6 +43,11 @@
             <td><?php echo $c['brand'] ?></td> 
             <td><?php echo $c['country_manufacture'] ?></td> 
             <td><?php echo $c['auction'] ?></td>   
+            <td>
+                <a href="<?php echo base_url() ?>index.php/admin/update_product/<?php echo $c['id'] ?>" ><span class="glyphicon glyphicon-pencil"></span></a>
+                &nbsp|&nbsp
+                <a href="<?php echo base_url() ?>index.php/admin/delete_product/<?php echo $c['id'] ?>"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
         </tr>
     <?php } ?>        
         </tbody>

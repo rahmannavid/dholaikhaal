@@ -116,6 +116,74 @@ class admin extends CI_Controller {
           redirect('/account/login', 'refresh');
         }
     }
+
+    public function delete_product($id)
+    {
+        $this->load->model('products_model');
+        $this->products_model->delete_product_by_id($id);
+        redirect('/admin/product_list');
+    }
+
+
+     public function update_product_child($id)
+    {
+        $input_cat_id = $this->input->post('input_product_cat');
+        $input_name = $this->input->post('input_name');
+        $input_description = $this->input->post('input_description');
+        $input_price = $this->input->post('input_price');
+        $input_condition = $this->input->post('input_condition');
+        $input_quantity = $this->input->post('input_quantity');
+        $input_brand = $this->input->post('input_brand');
+        $input_country_manufacture = $this->input->post('input_country_manufacture');
+        $input_type = $this->input->post('input_type');
+        $user_id = $this->session->userdata['logged_in']['id'];
+        
+        $this->load->model('products_model');
+      
+        
+        $data = array(
+                'input_cata_id' => $input_cat_id,
+                'input_name' => $input_name,
+                'input_description' => $input_description,
+                'input_price' => $input_price,
+                'input_condition' => $input_condition,
+                'input_quantity' => $input_quantity,
+                'input_brand' => $input_brand,
+                'input_country_manufacture' => $input_country_manufacture,
+                'input_auction' => $input_type,
+                'input_user_id' => $user_id,
+                'input_datetime' => date("Y-m-d H:i:s")
+            );  
+        $this->products_model->update_product_by_id($data,$id);
+
+        redirect('/admin/product_list', 'refresh');
+    } 
+
+    public function update_product($id)
+    {
+
+        if($this->session->userdata('logged_in'))
+        {
+            $hdata['title']='Admin-JDM Original';
+            $this->load->view('admin/common/header', $hdata);
+            
+            $this->load->model('category');
+            $data['cat'] = $this->category->get_category();
+            $data['id'] = $id ;
+
+            $this->load->view('admin/admin_product_update_view', $data);
+            $this->load->view('admin/common/footer');
+
+           
+        }
+        else
+        {
+          //If no session, redirect to login page
+          redirect('/account/login', 'refresh');
+        }
+
+       
+    } 
    
 }
 

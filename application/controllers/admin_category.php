@@ -15,6 +15,7 @@ class admin_category extends CI_Controller {
     {
         $category = $this->input->post('category');
         $id = $this->input->post('id');
+        
         $this->load->model('category');
         $data = array(
                     'id' => $id,
