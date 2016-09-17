@@ -19,6 +19,24 @@ class order extends CI_Model{
          return '00';
        }
     }
+
+
+      function add_order($order){
+        $this->load->database();
+        $data = array(
+            'user_id' =>  $order['input_id'],
+            'product_id' => $order['input_prod_id'],
+            'name' => $order['input_name'],
+            'mobile' => $order['input_mobile'],
+            'address' => $order['input_address'],
+            'email' => $order['input_email'],
+            'biding_price' => $order['input_price'],
+            'datetime'=> $order['input_datetime'],
+            
+        );
+         
+        $this->db->insert('orders', $data);
+    }
     
 }
 ?>

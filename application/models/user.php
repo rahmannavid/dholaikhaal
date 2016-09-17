@@ -43,6 +43,21 @@ class user extends CI_Model{
          return false;
        }
     }
+
+    function get_registration($reg_data)
+    {
+        $this->load->database();
+        $data = array(
+            'email' =>  $reg_data['inputEmail'],
+            'name' => $reg_data['inputName'],
+            'mobile' => $reg_data['inputMobNo'],
+            'password' => $reg_data['inputPassword'],
+            'address' => $reg_data['inputAddress']
+           
+        );
+         
+        $this->db->insert('user', $data);
+    }
     
 }
 ?>

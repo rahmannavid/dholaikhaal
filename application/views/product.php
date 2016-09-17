@@ -29,9 +29,9 @@
 							</h3>
 							<p><?php echo $product->description ?></p>
 							<p class="button-pless">
-                  <?php if($product->auction == Auction) { ?>  
+                  <?php if($product->auction == Auction) {  ?>  
 								  <a href="<?php echo site_url() ?>/place_order/form/<?php echo $product->id ?>" class="btn btn-success p-button">Make A Bid</a>
-                  <? } else { ?>
+                  <?php } else { ?>
                   <a href="<?php echo site_url() ?>/place_order/form/<?php echo $product->id ?>" class="btn btn-primary p-button">Buy Now</a> 
                   <?php } ?>
 							</p>	

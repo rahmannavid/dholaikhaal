@@ -34,6 +34,31 @@ class place_order extends CI_Controller {
 
     public function add_order(){
 
+        $input_id = $this->input->post('input_id');
+        $input_prod_id = $this->input->post('input_prod_id');
+        $input_name = $this->input->post('input_name');
+        $input_mobile = $this->input->post('input_mobile');
+        $input_address = $this->input->post('input_address');
+        $input_email = $this->input->post('input_email');
+        $input_price = $this->input->post('input_price');
+        
+        
+        $this->load->model('order');
+        
+        $data = array(
+                'input_id' => $input_id,
+                'input_prod_id' => $input_prod_id,
+                'input_name' => $input_name,
+                'input_mobile' => $input_mobile,
+                'input_address' => $input_address,
+                'input_email' => $input_email,
+                'input_price' => $input_price,
+                'input_datetime' => date("Y-m-d H:i:s")               
+            );
+
+        $this->order->add_order($data);
+       // redirect('/admin/products', 'refresh');
+
     }
     
 }

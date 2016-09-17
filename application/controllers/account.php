@@ -40,6 +40,29 @@ class account extends CI_Controller {
                 
         $this->load->view('common/footer');
     }
+
+    public function get_registration()
+    {
+        $inputName = $this->input->post('inputName');
+        $inputMobNo = $this->input->post('inputMobNo');
+        $inputEmail = $this->input->post('inputEmail');
+        $inputPassword = $this->input->post('inputPassword');
+        $inputAddress = $this->input->post('inputAddress');
+       
+        $this->load->model('user');
+        
+        $data = array(
+                'inputName' =>  $inputName,
+                'inputMobNo' => $inputMobNo,
+                'inputEmail' => $inputEmail,
+                'inputPassword' => $inputPassword,
+                'inputAddress' => $inputAddress,
+        );
+        
+        $this->user->get_registration($data);
+        redirect('/account/login', 'refresh');
+        
+    }
     
     public function registration()
     {
