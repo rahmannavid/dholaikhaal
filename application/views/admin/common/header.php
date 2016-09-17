@@ -65,7 +65,7 @@
                     ?>
                         <a href="<?php echo base_url() ?>index.php/account/login">Login</a>
                         |
-                        <a href="<?php echo base_url() ?>index.php/account/registration">Registration</  a>
+                        <a href="<?php echo base_url() ?>index.php/account/registration">Registration</a>
                     <?php } else { ?>
                         Welcome <?php echo $this->session->userdata['logged_in']['user_name']; ?> |
                         <a href="<?php echo base_url() ?>index.php/account/logout">Logout</a>

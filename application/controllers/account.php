@@ -53,6 +53,21 @@ class account extends CI_Controller {
                 
         $this->load->view('common/footer');
     }
+
+    public function do_registration()
+    {
+        
+        $hdata['title']='Registration-JDM Original';
+        
+        $this->load->model('category');
+        $hdata['cat'] = $this->category->get_category();
+        
+        $this->load->view('common/header', $hdata);
+
+        $this->load->view('admin/registration');
+                
+        $this->load->view('common/footer');
+    }
    
 }
 

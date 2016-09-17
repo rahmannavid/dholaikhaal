@@ -18,6 +18,12 @@ class productm extends CI_Model{
         $query = $this->db->query("SELECT * FROM product_image where prod_id = '$id'");
         return $query->result();
     }
+
+    function get_product_first_image_by_id($id){
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM product_image where prod_id = '$id' limit 1");
+        return $query->row();
+    }
     
     function get_all_product($start,$end){
         $this->load->database();

@@ -18,6 +18,7 @@
              <br/>
              <input type="submit" value="Login" class="form-control btn btn-primary"/>
            </form>
+           Not registered? <a href="<?php echo base_url() ?>index.php/account/registration">Registr Now</a>
            </div>
         </div>
     </div>

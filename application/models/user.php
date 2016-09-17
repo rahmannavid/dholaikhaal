@@ -26,6 +26,23 @@ class user extends CI_Model{
          return false;
        }
     }
+
+    function get_user_by_id($id){
+       $this -> db -> select('id, name, email, mobile, address');
+       $this -> db -> from('user');
+       $this -> db -> where('id', $id);
+
+       $query = $this -> db -> get();
+
+       if($query -> num_rows() == 1)
+       {
+         return $query->row();
+       }
+       else
+       {
+         return false;
+       }
+    }
     
 }
 ?>

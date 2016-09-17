@@ -15,7 +15,12 @@
                                 <h4 class="pull-right"><?php echo $p->price ?></h4>
                                 <h4><a href="<?php echo site_url() ?>/product/<?php echo $p->id ?>"><?php echo $p->name ?></a>
                                 </h4>
-                                <p><?php echo substr($p->description, 0, strpos($p->description, ' ', 130)) ?>...</p>
+                                <p><?php
+                                if (strlen($p->description) > 130) 
+                                  echo substr($p->description, 0, strpos($p->description, ' ', 130)); 
+                                else
+                                  echo $p->description;
+                                 ?>...</p>
 								 
 							</div>
 							<p class="button-pless"> 

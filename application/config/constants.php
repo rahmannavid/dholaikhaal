@@ -87,3 +87,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 //New Conostants ---
 define('Auction','1');
 define('NewCondition','1');
+define('Admin', 1);
