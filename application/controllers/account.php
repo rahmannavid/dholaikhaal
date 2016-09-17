@@ -27,6 +27,8 @@ class account extends CI_Controller {
         );
         $this->session->unset_userdata('logged_in', $sess_array);
         
+        $hdata['title']='Login-JDM Original';
+
         $this->load->model('category');
         $hdata['cat'] = $this->category->get_category();
         

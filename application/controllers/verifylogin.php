@@ -34,7 +34,13 @@ class VerifyLogin extends CI_Controller {
    else
    {
      //Go to private area
-     redirect('admin', 'refresh');
+     $session_data = $this->session->userdata('logged_in');
+     $type = $session_data['user_type'];
+     if($type == Admin){
+        redirect('admin', 'refresh');
+     }else{
+        redirect('/', 'refresh');
+     }
    }
  
  }
@@ -55,7 +61,8 @@ class VerifyLogin extends CI_Controller {
        $sess_array = array(
          'id' => $row->id,
          'user_email' => $row->email,
-         'user_name' => $row->name
+         'user_name' => $row->name,
+         'user_type' => $row->type
        );
        $this->session->set_userdata('logged_in', $sess_array);
      }

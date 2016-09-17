@@ -2,6 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class admin extends CI_Controller {
+    function __construct() {
+        parent::__construct();
+        $session_data = $this->session->userdata('logged_in');
+        $type = $session_data['user_type'];
+        
+        if($type != Admin){
+            redirect('/', 'refresh');
+        }
+    }
 
     public function index()
     {

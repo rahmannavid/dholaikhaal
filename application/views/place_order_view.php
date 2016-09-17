@@ -28,14 +28,14 @@
             
             <input type="hidden" id="input_id" name="input_id" value="<?php echo $user->id ?>"/>
             <input type="hidden" id="input_prod_id" name="input_prod_id" value="<?php echo $product->id ?>"/>
-            <input type="text" size="100%" id="input_name" name="input_name" class="form-control chat-input" placeholder="name" value="<?php echo $user->name ?>"/>
-            <input type="text" size="100%" id="input_mobile" name="input_mobile" class="form-control chat-input" placeholder="mobile" value="<?php echo $user->mobile ?>"/>
-            <input type="text" size="100%" id="input_address" name="input_address" class="form-control chat-input" placeholder="address" value="<?php echo $user->address ?>"/>
-            <input type="text" size="100%" id="input_email" name="input_email" class="form-control chat-input" placeholder="email" value="<?php echo $user->email ?>"/>
+            <input type="text" size="100%" id="input_name" name="input_name" class="form-control chat-input" placeholder="name" value="<?php echo $user->name ?>" required/>
+            <input type="text" size="100%" id="input_mobile" name="input_mobile" class="form-control chat-input" placeholder="mobile" value="<?php echo $user->mobile ?>" required/>
+            <input type="text" size="100%" id="input_address" name="input_address" class="form-control chat-input" placeholder="address" value="<?php echo $user->address ?>" required/>
+            <input type="text" size="100%" id="input_email" name="input_email" class="form-control chat-input" placeholder="email" value="<?php echo $user->email ?>" required/>
             
             <?php if($product->auction == Auction) { ?>   
                 <b style="color: #03c8ca;"> Last Bid : <?php echo $lastbid ?> </b>   
-                <input type="number" size="100%" id="input_price" name="input_price" class="form-control chat-input" placeholder="your biding price"/>
+                <input type="number" size="100%" id="input_price" name="input_price" class="form-control chat-input" placeholder="your biding price" required/>
             <?php } ?>
             
             <input type="submit" value="Submit" class="form-control btn btn-primary"/>
