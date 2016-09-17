@@ -34,8 +34,8 @@
               
              <select id="input_type" name="input_type" class="form-control chat-input">
                 <option value="0">--Select Type--</option>
-                <option value="1">Sell</option>
-                <option value="2">Auction</option>
+                <option value="1">Auction</option>
+                <option value="2">Sell</option>
              </select>
               
              <input type="submit" value="Submit" class="form-control btn btn-primary"/>
