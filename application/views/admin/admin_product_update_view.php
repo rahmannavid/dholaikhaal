@@ -43,6 +43,7 @@
              </select>
               
              <input type="submit" value="Update" class="form-control btn btn-primary"/>
+             <a href="<?php echo base_url()?>index.php/admin/product_list" class="form-control btn btn-success">Cancle</a> 
            </form>
         </div>
 </div>

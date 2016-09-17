@@ -30,7 +30,7 @@
 							<p><?php echo $product->description ?></p>
 							<p class="button-pless">
 								<a href="#" class="btn btn-primary p-button">Buy Now</a> 
-								<a href="#" class="btn btn-success p-button">Make offer</a>
+								<a href="#" class="btn btn-success p-button">Make A Bid</a>
 							</p>	
 						</div>
 					</div>
@@ -49,7 +49,7 @@
                                   <tr>
                                     <td class="col-md-2">Condition</td>
                                     <td class="col-md-1">:</td>
-                                    <td class="col-md-7"><?php if($product->condition = 0) echo 'Used'; else echo 'New'; ?></td>
+                                    <td class="col-md-7"><?php if($product->condition == 1) echo 'New'; else echo 'Used'; ?></td>
                                   </tr>
                                   <tr>
                                     <td class="col-md-2">Quantity</td>

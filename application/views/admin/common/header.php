@@ -51,10 +51,10 @@
                         <a href="#">Users</a>
                     </li>
                     <li>
-                        <a href="#">Porducts</a>
+                        <a href="<?php echo base_url()?>index.php/admin/product_list">Porducts</a>
                     </li>
                     <li>
-                        <a href="#">Category</a>
+                        <a href="<?php echo base_url()?>index.php/admin/category">Category</a>
                     </li>
                     
                 </ul>

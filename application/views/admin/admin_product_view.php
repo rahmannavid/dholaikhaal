@@ -39,7 +39,7 @@
              </select>
               
              <input type="submit" value="Submit" class="form-control btn btn-primary"/>
-              <a href="#" class="form-control btn btn-success">Product List</a> 
+             <a href="<?php echo base_url()?>index.php/admin/product_list" class="form-control btn btn-success">Cancle</a>  
            </form>
         </div>
 </div>

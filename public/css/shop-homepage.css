@@ -120,3 +120,7 @@ footer {
 div.form input, select, textarea, .btn {
     margin-bottom: 10px;
 }
+
+table th{
+    background-color: #e8edef;   
+}

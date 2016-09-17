@@ -1,4 +1,5 @@
  <div class="col-md-12">
+ <a href="<?php echo base_url()?>index.php/admin/products" class="form-control btn btn-success">Add New Product</a>
     <table class="table table-striped">
         <thead class="">
         <tr>
@@ -38,11 +39,11 @@
             <td><?php echo $c['name'] ?></td>        
             <td><?php echo $c['description'] ?></td>     
             <td><?php echo $c['price'] ?></td> 
-            <td><?php echo $c['condition'] ?></td> 
+            <td><?php if($c['condition'] == NewCondition) echo 'New'; else echo 'Used'; ?></td> 
             <td><?php echo $c['quantity'] ?></td> 
             <td><?php echo $c['brand'] ?></td> 
             <td><?php echo $c['country_manufacture'] ?></td> 
-            <td><?php echo $c['auction'] ?></td>   
+            <td><?php if ($c['auction'] == Auction) echo 'Auction'; else echo 'Sell' ?></td>   
             <td>
                 <a href="<?php echo base_url() ?>index.php/admin/update_product/<?php echo $c['id'] ?>" ><span class="glyphicon glyphicon-pencil"></span></a>
                 &nbsp|&nbsp

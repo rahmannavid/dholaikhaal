@@ -13,7 +13,7 @@
                             <?php } ?>
                             <div class="caption">
                                 <h4 class="pull-right"><?php echo $p->price ?></h4>
-                                <h4><a href="#"><?php echo $p->name ?></a>
+                                <h4><a href="<?php echo site_url() ?>/product/<?php echo $p->id ?>"><?php echo $p->name ?></a>
                                 </h4>
                                 <p><?php echo substr($p->description, 0, strpos($p->description, ' ', 130)) ?>...</p>
 								 
