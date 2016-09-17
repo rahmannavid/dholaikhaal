@@ -168,7 +168,10 @@ class admin extends CI_Controller {
             $this->load->view('admin/common/header', $hdata);
             
             $this->load->model('category');
+            $this->load->model('productm');
+           
             $data['cat'] = $this->category->get_category();
+            $data['product'] = $this->productm->get_product_by_id($id);
             $data['id'] = $id ;
 
             $this->load->view('admin/admin_product_update_view', $data);
