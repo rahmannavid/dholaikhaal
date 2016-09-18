@@ -1,10 +1,10 @@
+<div class="col-md-12">
+    <h2>Please Update your product detail. </h2>
+    <h4 style="color:red;">Product Name :  <?php echo $product->name  ?>  </h4>
+</div>
 <div class="col-md-7">
 
         <div class="form">
-         
-            <h2>Please Update your product detail. </h2>
-            <h4 style="color:red;">Product Name :  <?php echo $product->name  ?>  </h4>
-            <br>
            <form id="pro-form" method="post" action="<?php echo base_url() ?>index.php/admin/update_product_child/<?php echo $id ?>">
              
              <select id="input_product_cat" name="input_product_cat" class="form-control chat-input">
@@ -46,4 +46,20 @@
              <a href="<?php echo base_url()?>index.php/admin/product_list" class="form-control btn btn-success">Cancle</a> 
            </form>
         </div>
+</div>
+<div class="col-md-4 form">
+    <h4>Select image to upload:</h4>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        
+        <input type="file" name="fileToUpload" id="fileToUpload" class="form-control chat-input">
+        <input type="submit" value="Upload Image" name="submit" class="form-control btn btn-primary">
+    </form>
+      <?php foreach($productimg as $pi ) { ?> 
+        <div class="admin-prod-image"> 
+          <a href="<?php echo base_url()?>index.php/admin/delete_prod_image_by_id?<?php echo 'pim_id='.$pi->id.'&pid='.$pi->prod_id ?>" > <span class="glyphicon glyphicon-remove">
+            <img src="<?php echo base_url() ?>public/img/products/<?php echo $pi->img ?>" class="img-responsive"> 
+          </a>
+        </div>
+      
+      <?php } ?>
 </div>

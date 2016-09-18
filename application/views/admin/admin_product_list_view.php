@@ -37,7 +37,13 @@
             </td>    
 
             <td><?php echo $c['name'] ?></td>        
-            <td><?php echo $c['description'] ?></td>     
+            <td><?php
+                if (strlen($c['description']) > 130) 
+                    echo substr($c['description'], 0, strpos($c['description'], ' ', 30)); 
+                else
+                    echo $c['description'];
+                    ?>...
+            </td>     
             <td><?php echo $c['price'] ?></td> 
             <td><?php if($c['condition'] == NewCondition) echo 'New'; else echo 'Used'; ?></td> 
             <td><?php echo $c['quantity'] ?></td> 

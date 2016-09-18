@@ -12,7 +12,7 @@
                 <?php if(isset($message_display)) echo $message_display ?> 
             </h4>
            <br/>
-             <input type="text" size="100" id="username" name="username" class="form-control chat-input" placeholder="username"/>
+             <input type="text" size="100" id="username" name="username" class="form-control chat-input" placeholder="email"/>
              <br/>
              <input type="password" size="100" id="passowrd" name="password" class="form-control chat-input" placeholder="password"/>
              <br/>

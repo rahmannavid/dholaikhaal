@@ -43,6 +43,14 @@ class products_model extends CI_Model{
         $this->db->delete('product');
     }
 
+    function delete_product_image_by_id($img_id){
+
+        $this->load->database();
+        $this->db->where('id',$img_id);
+        $this->db->delete('product_image');
+    }
+    
+
     function update_product_by_id ($pro_data , $id){
         
          $this->load->database();

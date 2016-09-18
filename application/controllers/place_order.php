@@ -28,7 +28,7 @@ class place_order extends CI_Controller {
         }
         else
         {
-            redirect('/account/login', 'refresh');
+            redirect('/account/login?message=Please login first to make an order.', 'refresh');
         }
     }
 
