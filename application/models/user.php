@@ -59,6 +59,15 @@ class user extends CI_Model{
          
         $this->db->insert('user', $data);
     }
+
+    function get_user_type($id)
+    {
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM user where id = '$id'");
+        return $query->row();
+    }
+
+    
     
 }
 ?>

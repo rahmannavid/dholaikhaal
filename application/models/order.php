@@ -46,6 +46,20 @@ class order extends CI_Model{
         $this->db->insert('orders', $data);
     }
 
+    function get_order_list(){
+
+        $this->load->database();
+        $query = $this->db->query('SELECT * FROM orders');
+        return $query->result_array();
+    }
+
+    function get_order_list_by_id($id){
+
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM orders where user_id='$id'");
+        return $query->result_array();
+    }
+
     
 }
 ?>

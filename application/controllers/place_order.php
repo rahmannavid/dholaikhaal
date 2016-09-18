@@ -62,6 +62,41 @@ class place_order extends CI_Controller {
        // redirect('/admin/products', 'refresh');
 
     }
+
+     public function order_list(){
+
+       if($this->session->userdata('logged_in'))
+        {
+            $hdata['title']='Admin-JDM Original';
+            $this->load->view('admin/common/header', $hdata);
+            
+            $this->load->model('order');
+            $this->load->model('products_model');
+            $this->load->model('user');
+            
+            $user_id = $this->session->userdata['logged_in']['id'];
+            $user_type = $this->user->get_user_type($user_id);
+
+            if ($user_type->type ==1){
+                 $data['order_list'] = $this->order->get_order_list();
+                 $data['product_list'] = $this->products_model->get_product_list();
+            } 
+            else {
+                 $data['order_list'] = $this->order->get_order_list_by_id($user_id);
+                 $data['product_list'] = $this->products_model->get_product_list();
+            }
+           
+            $this->load->view('admin/admin_order_list_view',$data);
+            $this->load->view('admin/common/footer');
+           
+        }
+        else
+        {
+          //If no session, redirect to login page
+          redirect('/account/login', 'refresh');
+        } 
+
+    }
     
 }
 
