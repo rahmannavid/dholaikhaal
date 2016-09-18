@@ -26,16 +26,8 @@
                 ?>
             </td> 
 
-            <td><?php
-                foreach ($product_list as $d) {
-                    if ($d['id']== $c['product_id']){                        
-                            echo $d['name'] ; break ;
-                    }
-                }
-                ?> 
-            </td>    
-
-            <td><?php echo $c['biding_price'] ?></td>        
+            <td><?php echo $c['name']?> </td>    
+            <td><?php echo $c['biding_price']?></td>        
             <td><?php echo $c['datetime'] ?></td>     
             <td><?php echo $c['name'] ?></td>  
             <td><?php echo $c['mobile'] ?></td> 

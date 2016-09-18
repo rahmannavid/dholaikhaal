@@ -49,14 +49,14 @@ class order extends CI_Model{
     function get_order_list(){
 
         $this->load->database();
-        $query = $this->db->query('SELECT * FROM orders');
+        $query = $this->db->query('SELECT orders.*, product.name FROM orders, product where orders.product_id = product.id');
         return $query->result_array();
     }
 
     function get_order_list_by_id($id){
 
         $this->load->database();
-        $query = $this->db->query("SELECT * FROM orders where user_id='$id'");
+        $query = $this->db->query("SELECT orders.*, product.name FROM orders, product where orders.product_id = product.id and orders.user_id='$id'");
         return $query->result_array();
     }
 
