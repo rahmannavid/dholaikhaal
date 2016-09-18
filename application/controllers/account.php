@@ -14,7 +14,10 @@ class account extends CI_Controller {
         $this->load->view('common/header', $hdata);
         
         $this->load->helper(array('form'));
-        $this->load->view('admin/login');
+
+        $data['message_display'] = $this->input->get('message');
+
+        $this->load->view('admin/login', $data);
                 
         $this->load->view('common/footer');
     }
@@ -25,8 +28,9 @@ class account extends CI_Controller {
         $sess_array = array(
         'username' => ''
         );
-        $this->session->unset_userdata('logged_in', $sess_array);
         
+        $this->session->unset_userdata('logged_in', $sess_array);
+        /*
         $hdata['title']='Login-JDM Original';
 
         $this->load->model('category');
@@ -39,6 +43,8 @@ class account extends CI_Controller {
         $this->load->view('admin/login', $data);
                 
         $this->load->view('common/footer');
+        */
+        redirect('/account/login?message=Successfully Logout', 'refresh');
     }
 
     public function get_registration()
@@ -61,26 +67,14 @@ class account extends CI_Controller {
         );
         
         $this->user->get_registration($data);
-        redirect('/account/login', 'refresh');
+
+        //$data['message_display'] = 'Successfully Registered';
+        redirect('/account/login?message=Successfully Registered. Please login using your email and password. ', 'refresh');
+        
         
     }
     
     public function registration()
-    {
-        
-        $hdata['title']='Registration-JDM Original';
-        
-        $this->load->model('category');
-        $hdata['cat'] = $this->category->get_category();
-        
-        $this->load->view('common/header', $hdata);
-
-        $this->load->view('admin/registration');
-                
-        $this->load->view('common/footer');
-    }
-
-    public function do_registration()
     {
         
         $hdata['title']='Registration-JDM Original';
