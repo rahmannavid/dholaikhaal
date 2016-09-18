@@ -38,8 +38,8 @@
               
              <select id="input_type" name="input_type" class="form-control chat-input">
                 <option value="0" <?php if($product->auction == '0'){echo("selected");}?>>--Select Type--</option>
-                <option value="1" <?php if($product->auction == '1'){echo("selected");}?>>Sell</option>
-                <option value="2" <?php if($product->auction == '2'){echo("selected");}?>>Auction</option>
+                <option value="1" <?php if($product->auction == '1'){echo("selected");}?>>Auction</option>
+                <option value="2" <?php if($product->auction == '2'){echo("selected");}?>>Sell</option>
              </select>
               
              <input type="submit" value="Update" class="form-control btn btn-primary"/>
