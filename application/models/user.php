@@ -50,6 +50,7 @@ class user extends CI_Model{
         $data = array(
             'email' =>  $reg_data['inputEmail'],
             'name' => $reg_data['inputName'],
+            'type' => $reg_data['inputType'],
             'mobile' => $reg_data['inputMobNo'],
             'password' => $reg_data['inputPassword'],
             'address' => $reg_data['inputAddress']

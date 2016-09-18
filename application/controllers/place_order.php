@@ -34,7 +34,7 @@ class place_order extends CI_Controller {
 
     public function add_order(){
 
-        $input_id = $this->input->post('input_id');
+        $user_id = $this->input->post('input_id');
         $input_prod_id = $this->input->post('input_prod_id');
         $input_name = $this->input->post('input_name');
         $input_mobile = $this->input->post('input_mobile');
@@ -44,15 +44,17 @@ class place_order extends CI_Controller {
         
         
         $this->load->model('order');
-        
+
+        $user_type = $this->order->get_user_type($user_id);
         $data = array(
-                'input_id' => $input_id,
+                'user_id' => $user_id,
                 'input_prod_id' => $input_prod_id,
                 'input_name' => $input_name,
                 'input_mobile' => $input_mobile,
                 'input_address' => $input_address,
                 'input_email' => $input_email,
                 'input_price' => $input_price,
+                'input_type' => $user_type->type,
                 'input_datetime' => date("Y-m-d H:i:s")               
             );
 

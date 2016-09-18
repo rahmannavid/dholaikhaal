@@ -20,23 +20,32 @@ class order extends CI_Model{
        }
     }
 
+    function get_user_type($id){
+
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM user where id = '$id'");
+        return $query->row();
+    }
+
 
       function add_order($order){
         $this->load->database();
         $data = array(
-            'user_id' =>  $order['input_id'],
+            'user_id' =>  $order['user_id'],
             'product_id' => $order['input_prod_id'],
             'name' => $order['input_name'],
             'mobile' => $order['input_mobile'],
             'address' => $order['input_address'],
             'email' => $order['input_email'],
             'biding_price' => $order['input_price'],
+            'type' => $order['input_type'],
             'datetime'=> $order['input_datetime'],
             
         );
          
         $this->db->insert('orders', $data);
     }
+
     
 }
 ?>

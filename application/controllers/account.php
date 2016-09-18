@@ -50,9 +50,10 @@ class account extends CI_Controller {
         $inputAddress = $this->input->post('inputAddress');
        
         $this->load->model('user');
-        
+        $x = 2 ;
         $data = array(
                 'inputName' =>  $inputName,
+                'inputType' => $x,
                 'inputMobNo' => $inputMobNo,
                 'inputEmail' => $inputEmail,
                 'inputPassword' => $inputPassword,
