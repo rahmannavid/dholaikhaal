@@ -38,5 +38,4 @@ class product extends CI_Controller {
         $this->load->view('common/footer');
     }
   
-    
 }

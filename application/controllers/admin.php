@@ -7,7 +7,7 @@ class admin extends CI_Controller {
         $session_data = $this->session->userdata('logged_in');
         $type = $session_data['user_type'];
         
-        if($type != Admin){
+        if($type == 0){
             redirect('/', 'refresh');
         }
     }
@@ -133,6 +133,15 @@ class admin extends CI_Controller {
         redirect('/admin/product_list');
     }
 
+    
+    public function delete_prod_image_by_id(){
+        $prod_img_id = $this->input->get('pim_id');
+        $prod_id = $this->input->get('pid');
+
+        $this->load->model('products_model');
+        $this->products_model->delete_product_image_by_id($prod_img_id);
+        redirect('/admin/update_product/'.$prod_id);
+    }
 
      public function update_product_child($id)
     {
@@ -181,6 +190,7 @@ class admin extends CI_Controller {
            
             $data['cat'] = $this->category->get_category();
             $data['product'] = $this->productm->get_product_by_id($id);
+            $data['productimg'] = $this->productm->get_product_image_by_id($id);
             $data['id'] = $id ;
 
             $this->load->view('admin/admin_product_update_view', $data);
