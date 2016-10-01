@@ -137,8 +137,13 @@ class admin extends CI_Controller {
     public function delete_prod_image_by_id(){
         $prod_img_id = $this->input->get('pim_id');
         $prod_id = $this->input->get('pid');
-
         $this->load->model('products_model');
+
+        $r = $this->products_model->get_product_image_by_image_id($prod_img_id);
+        $uploadDir = './public/img/products/';
+        unlink($uploadDir.$r->img);                
+
+        
         $this->products_model->delete_product_image_by_id($prod_img_id);
         redirect('/admin/update_product/'.$prod_id);
     }

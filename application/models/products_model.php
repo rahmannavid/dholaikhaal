@@ -59,6 +59,12 @@ class products_model extends CI_Model{
         $this->db->where('id',$img_id);
         $this->db->delete('product_image');
     }
+
+    function get_product_image_by_image_id($id){
+        $this->load->database();
+        $query = $this->db->query("SELECT * FROM product_image where id = '$id'");
+        return $query->row();
+    }
     
 
     function update_product_by_id ($pro_data , $id){
