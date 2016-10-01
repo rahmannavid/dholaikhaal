@@ -29,6 +29,16 @@ class products_model extends CI_Model{
        
     }
 
+    function add_product_image($prod_img, $prod_id){
+        $this->load->database();
+        $data = array(
+            'prod_id' =>  $prod_id,
+            'img' => $prod_img
+        );
+         
+        $this->db->insert('product_image', $data);
+    }
+
     function get_product_list(){
 
         $this->load->database();

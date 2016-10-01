@@ -49,7 +49,7 @@
 </div>
 <div class="col-md-4 form">
     <h4>Select image to upload:</h4>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="<?php echo base_url() ?>index.php/admin/upload_image_by_id/<?php echo $id ?>" method="post" enctype="multipart/form-data">
         
         <input type="file" name="fileToUpload" id="fileToUpload" class="form-control chat-input">
         <input type="submit" value="Upload Image" name="submit" class="form-control btn btn-primary">

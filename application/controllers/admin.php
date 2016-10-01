@@ -205,6 +205,21 @@ class admin extends CI_Controller {
         }
 
        
+    }
+
+    public function upload_image_by_id($id){
+      
+		$uploadDir = './public/img/products/';
+		$fileName = $_FILES["fileToUpload"]['name'];
+		$tmpName = $_FILES["fileToUpload"]["tmp_name"]; 
+		$filePath = $uploadDir.$id."_".$fileName;
+
+        $result = move_uploaded_file($tmpName,$filePath); 
+
+        $this->load->model('products_model');
+        $this->products_model->add_product_image($id."_".$fileName,$id);
+
+        redirect('/admin/update_product/'.$id);
     } 
    
 }
