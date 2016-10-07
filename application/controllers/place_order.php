@@ -63,6 +63,10 @@ class place_order extends CI_Controller {
 
     }
 
+     public function update_order(){
+
+    }
+
      public function order_list(){
 
        if($this->session->userdata('logged_in'))
