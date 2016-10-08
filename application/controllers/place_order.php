@@ -59,7 +59,7 @@ class place_order extends CI_Controller {
             );
 
         $this->order->add_order($data);
-       // redirect('/admin/products', 'refresh');
+        redirect('/place_order/order_list', 'refresh');
 
     }
 
