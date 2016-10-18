@@ -36,9 +36,16 @@
             <td><?php echo $c['address'] ?></td> 
             <td><?php echo $c['email'] ?></td> 
             <td><?php echo $c['comment'] ?></td> 
-            <td><?php echo $c['status'] ?></td> 
+            <td><?php 
+            
+                    if ($c['status']==1) { echo "Pending" ; }
+                    else if ($c['status']==2) { echo "Confirmed" ; }
+                    else if ($c['status']==3) { echo "Delivered" ; }
+                    else if ($c['status']==4) { echo "Declined" ; }
+
+                ?>
+            </td> 
             <td>
-            <?php echo $c['id']?>   
                 <button onclick="update_order(<?php echo $c['id']?>)" style="width:auto;" class="btn btn-default"> Action </button>
             </td>
             
@@ -60,7 +67,7 @@
       <br> 
       <label><b>Status</b></label>
       <br>
-      <input type="hidden" name="order_id" id="order_id" value="<?php echo $c['id']?>"/> 
+      <input type="hidden" name="order_id" id="order_id" value=""/> 
       <select id="input_condition"  name="input_condition" class="form-control chat-input">
                 <option value="0" >--Select Status--</option>
                 <option value="1" >Pending</option>
@@ -84,7 +91,7 @@
 function update_order(id)
 {
     document.getElementById('id01').style.display='block';
-    document.getElementById('hidden').value=id;
+    document.getElementById('order_id').value=id;
 }
 function check_empty()
 {

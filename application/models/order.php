@@ -46,6 +46,18 @@ class order extends CI_Model{
         $this->db->insert('orders', $data);
     }
 
+       function update_order($order,$id){
+        
+        $this->load->database();
+        $data = array(
+            'status' =>  $order['input_condition'],
+            'comment' => $order['input_description'],    
+        );
+         
+        $this->db->where('id',$id);
+        $this->db->update('orders', $data);
+    }
+
     function get_order_list(){
 
         $this->load->database();

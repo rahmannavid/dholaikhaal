@@ -65,6 +65,18 @@ class place_order extends CI_Controller {
 
      public function update_order(){
 
+        $order_id = $this->input->post('order_id');
+        $status = $this->input->post('input_condition');
+        $description = $this->input->post('input_description');
+        
+        $data = array(
+                'input_condition' => $status,
+                'input_description' => $description              
+            );
+        $this->load->model('order');
+        $this->order->update_order($data,$order_id);
+        redirect('/place_order/order_list', 'refresh');
+
     }
 
      public function order_list(){
