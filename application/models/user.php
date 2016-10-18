@@ -58,6 +58,25 @@ class user extends CI_Model{
         );
          
         $this->db->insert('user', $data);
+    }
+
+    function get_user_type($user_id)
+    {
+        $this->load->database();  
+        $this -> db -> select('type');
+        $this -> db -> from('user');
+        $this -> db -> where('id', $user_id);
+
+        $query = $this -> db -> get();
+
+        if($query -> num_rows() == 1)
+        {
+          return $query->row();
+        }
+        else
+        {
+          return false;
+        }
     }    
     
 }

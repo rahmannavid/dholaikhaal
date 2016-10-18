@@ -39,7 +39,7 @@
             <td><?php echo $c['status'] ?></td> 
             <td>
             <?php echo $c['id']?>   
-                <button onclick="update_order()" style="width:auto;"> ADD </button>
+                <button onclick="update_order(<?php echo $c['id']?>)" style="width:auto;" class="btn btn-default"> Action </button>
             </td>
             
         </tr>
@@ -59,7 +59,8 @@
     <div class="col-md-9">
       <br> 
       <label><b>Status</b></label>
-      <br>  
+      <br>
+      <input type="hidden" name="order_id" id="order_id" value="<?php echo $c['id']?>"/> 
       <select id="input_condition"  name="input_condition" class="form-control chat-input">
                 <option value="0" >--Select Status--</option>
                 <option value="1" >Pending</option>
@@ -80,10 +81,10 @@
 
 <script>
 
-function update_order()
+function update_order(id)
 {
     document.getElementById('id01').style.display='block';
-    
+    document.getElementById('hidden').value=id;
 }
 function check_empty()
 {
