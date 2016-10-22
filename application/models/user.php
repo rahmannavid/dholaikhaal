@@ -78,6 +78,12 @@ class user extends CI_Model{
           return false;
         }
     }    
+
+     function get_all_user() {
+        $this->load->database();
+        $query = $this->db->query('SELECT * FROM user');
+        return $query->result_array();
+     }
     
 }
 ?>

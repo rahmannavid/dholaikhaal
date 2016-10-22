@@ -83,7 +83,9 @@ class place_order extends CI_Controller {
                  $this->load->view('admin/common/footer');
             } 
             else {
-                 $hdata['title']='Admin-JDM Original';
+                 $this->load->model('category');
+                 $hdata['title']='Product-JDM Original';
+                 $hdata['cat'] = $this->category->get_category();
                  $this->load->view('common/header', $hdata);
                  
                  $data['order_list'] = $this->order->get_order_list_by_id($user_id);
@@ -136,13 +138,16 @@ class place_order extends CI_Controller {
                 $this->load->view('admin/common/footer');
             } 
             else {
-                 $hdata['title']='Admin-JDM Original';
-                 $this->load->view('admin/common/header', $hdata);
+
+                 $this->load->model('category');
+                 $hdata['title']='Product-JDM Original';
+                 $hdata['cat'] = $this->category->get_category();
+                 $this->load->view('common/header', $hdata);
                  
                  $data['order_list'] = $this->order->get_order_list_by_id($user_id);
 
                  $this->load->view('user_order_list_view',$data);
-                 $this->load->view('admin/common/footer');
+                 $this->load->view('common/footer');
             }
 
            

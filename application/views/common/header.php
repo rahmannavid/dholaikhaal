@@ -54,6 +54,9 @@
                         <a href="<?php echo base_url() ?>index.php/auction">Auction</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url() ?>index.php/place_order/order_list">Your Order</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url() ?>index.php/contact">Contact</a>
                     </li>
                 </ul>

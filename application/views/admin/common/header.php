@@ -48,7 +48,7 @@
                         <a href="<?php echo base_url()?>index.php/place_order/order_list">Orders</a>
                     </li>
                      <li>
-                        <a href="#">Users</a>
+                        <a href="<?php echo base_url()?>index.php/user_a/user_list">Users</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url()?>index.php/admin/product_list">Porducts</a>
