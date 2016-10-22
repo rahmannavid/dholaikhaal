@@ -36,7 +36,7 @@ class place_order extends CI_Controller {
 
         $user_id = $this->input->post('input_id');
         $input_prod_id = $this->input->post('input_prod_id');
-        $input_name = $this->input->post('input_name');
+        $input_name = $this->input->post('input_name_user');
         $input_mobile = $this->input->post('input_mobile');
         $input_address = $this->input->post('input_address');
         $input_email = $this->input->post('input_email');
@@ -49,7 +49,7 @@ class place_order extends CI_Controller {
         $data = array(
                 'user_id' => $user_id,
                 'input_prod_id' => $input_prod_id,
-                'input_name' => $input_name,
+                'input_name_user' => $input_name,
                 'input_mobile' => $input_mobile,
                 'input_address' => $input_address,
                 'input_email' => $input_email,

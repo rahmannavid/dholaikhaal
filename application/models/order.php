@@ -35,7 +35,7 @@ class order extends CI_Model{
         $data = array(
             'user_id' =>  $order['user_id'],
             'product_id' => $order['input_prod_id'],
-            'name' => $order['input_name'],
+            'name' => $order['input_name_user'],
             'mobile' => $order['input_mobile'],
             'address' => $order['input_address'],
             'email' => $order['input_email'],
@@ -64,20 +64,20 @@ class order extends CI_Model{
     function status_list($status){
 
         $this->load->database();
-        $query = $this->db->query("SELECT orders.*, product.name FROM orders, product where orders.product_id = product.id and orders.status ='$status'");
+        $query = $this->db->query("SELECT orders.*, product.name as pname FROM orders, product where orders.product_id = product.id and orders.status ='$status'");
         return $query->result_array();
     }
     function get_order_list(){
 
         $this->load->database();
-        $query = $this->db->query('SELECT orders.*, product.name FROM orders, product where orders.product_id = product.id');
+        $query = $this->db->query('SELECT orders.*, product.name as pname FROM orders, product where orders.product_id = product.id and orders.status =1');
         return $query->result_array();
     }
 
     function get_order_list_by_id($id){
 
         $this->load->database();
-        $query = $this->db->query("SELECT orders.*, product.name FROM orders, product where orders.product_id = product.id and orders.user_id='$id'");
+        $query = $this->db->query("SELECT orders.*, product.name as pname FROM orders, product where orders.product_id = product.id and orders.user_id='$id'");
         return $query->result_array();
     }
 

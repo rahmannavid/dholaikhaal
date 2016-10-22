@@ -47,7 +47,7 @@
                 ?>
             </td> 
 
-            <td><?php echo $c['name']?> </td>    
+            <td><?php echo $c['pname']?> </td>    
             <td><?php echo $c['biding_price']?></td>        
             <td><?php echo $c['datetime'] ?></td>     
             <td><?php echo $c['name'] ?></td>  

@@ -28,7 +28,7 @@
             
             <input type="hidden" id="input_id" name="input_id" value="<?php echo $user->id ?>"/>
             <input type="hidden" id="input_prod_id" name="input_prod_id" value="<?php echo $product->id ?>"/>
-            <input type="text" size="100%" id="input_name" name="input_name" class="form-control chat-input" placeholder="name" value="<?php echo $user->name ?>" required/>
+            <input type="text" size="100%" id="input_name_user" name="input_name_user" class="form-control chat-input" placeholder="name" value="<?php echo $user->name ?>" required/>
             <input type="text" size="100%" id="input_mobile" name="input_mobile" class="form-control chat-input" placeholder="mobile" value="<?php echo $user->mobile ?>" required/>
             <input type="text" size="100%" id="input_address" name="input_address" class="form-control chat-input" placeholder="address" value="<?php echo $user->address ?>" required/>
             <input type="text" size="100%" id="input_email" name="input_email" class="form-control chat-input" placeholder="email" value="<?php echo $user->email ?>" required/>
