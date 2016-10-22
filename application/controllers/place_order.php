@@ -63,6 +63,44 @@ class place_order extends CI_Controller {
 
     }
 
+    public function select_status (){
+
+        if($this->session->userdata('logged_in'))
+        {    
+            $this->load->model('order');
+            $user_id = $this->session->userdata['logged_in']['id'];
+            $user_type = $this->order->get_user_type($user_id);
+
+            if ($user_type->type ==1){
+
+                 $hdata['title']='Admin-JDM Original';
+                 $this->load->view('admin/common/header', $hdata);
+            
+                 $status = $this->input->post('input_condition_status');
+                 $data['order_list'] =  $this->order->status_list($status);
+                
+                 $this->load->view('admin/admin_order_list_view',$data);
+                 $this->load->view('admin/common/footer');
+            } 
+            else {
+                 $hdata['title']='Admin-JDM Original';
+                 $this->load->view('common/header', $hdata);
+                 
+                 $data['order_list'] = $this->order->get_order_list_by_id($user_id);
+
+                 $this->load->view('user_order_list_view',$data);
+                 $this->load->view('common/footer');
+            }
+                   
+        }
+        else
+        {
+          //If no session, redirect to login page
+          redirect('/account/login', 'refresh');
+        } 
+
+      
+    }
      public function update_order(){
 
         $order_id = $this->input->post('order_id');
@@ -82,24 +120,31 @@ class place_order extends CI_Controller {
      public function order_list(){
 
        if($this->session->userdata('logged_in'))
-        {
-            $hdata['title']='Admin-JDM Original';
-            $this->load->view('admin/common/header', $hdata);
-            
+        {        
             $this->load->model('order');
-            
             $user_id = $this->session->userdata['logged_in']['id'];
             $user_type = $this->order->get_user_type($user_id);
 
             if ($user_type->type ==1){
-                 $data['order_list'] = $this->order->get_order_list();
+
+                $hdata['title']='Admin-JDM Original';
+                $this->load->view('admin/common/header', $hdata);
+            
+                $data['order_list'] = $this->order->get_order_list();
+                         
+                $this->load->view('admin/admin_order_list_view',$data);
+                $this->load->view('admin/common/footer');
             } 
             else {
+                 $hdata['title']='Admin-JDM Original';
+                 $this->load->view('admin/common/header', $hdata);
+                 
                  $data['order_list'] = $this->order->get_order_list_by_id($user_id);
+
+                 $this->load->view('user_order_list_view',$data);
+                 $this->load->view('admin/common/footer');
             }
-           
-            $this->load->view('admin/admin_order_list_view',$data);
-            $this->load->view('admin/common/footer');
+
            
         }
         else

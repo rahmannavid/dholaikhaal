@@ -1,4 +1,23 @@
 
+  <div class="col-md-12">   
+        <form id="select_status"  method="post" action="<?php echo base_url() ?>index.php/place_order/select_status/">
+
+                 <div class="col-md-12">
+                     <h4> Select Status : </h4>
+                  </div>
+            <div class="col-md-4">
+                <select id="input_condition_status"  name="input_condition_status" class="form-control chat-input">
+                <option value="0" >--Select Status--</option>
+                <option value="1" >Pending</option>
+                <option value="2" >Confirmed</option>
+                <option value="3" >Delivered</option>
+                <option value="4" >Declined</option>
+                </select>
+            </div>
+            <button style="width:auto;" class="btn btn-default"> Show </button>
+        </form>
+  </div>
+ 
  <div class="col-md-12">
     <table class="table table-striped">
         <thead class="">

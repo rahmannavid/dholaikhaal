@@ -30,6 +30,8 @@ class order extends CI_Model{
 
       function add_order($order){
         $this->load->database();
+        $status = 1 ;
+        $comment = 'Add Comment...';
         $data = array(
             'user_id' =>  $order['user_id'],
             'product_id' => $order['input_prod_id'],
@@ -40,6 +42,8 @@ class order extends CI_Model{
             'biding_price' => $order['input_price'],
             'type' => $order['input_type'],
             'datetime'=> $order['input_datetime'],
+            'status' => $status,
+            'comment' => $comment,
             
         );
          
@@ -57,7 +61,12 @@ class order extends CI_Model{
         $this->db->where('id',$id);
         $this->db->update('orders', $data);
     }
+    function status_list($status){
 
+        $this->load->database();
+        $query = $this->db->query("SELECT orders.*, product.name FROM orders, product where orders.product_id = product.id and orders.status ='$status'");
+        return $query->result_array();
+    }
     function get_order_list(){
 
         $this->load->database();
