@@ -37,10 +37,10 @@
             <td><?php echo $c['comment'] ?></td> 
             <td><?php 
             
-                    if ($c['status']==1) { echo "Pending" ; }
-                    else if ($c['status']==2) { echo "Confirmed" ; }
-                    else if ($c['status']==3) { echo "Delivered" ; }
-                    else if ($c['status']==4) { echo "Declined" ; }
+                    if ($c['status']==1) { echo '<span style="color:red;text-align:center; font-weight: bold;">Pending</span>'; }
+                    else if ($c['status']==2) { echo '<span style="color:green;text-align:center;font-weight: bold;">Confirmed</span>'; }
+                    else if ($c['status']==3) { echo '<span style="color:blue;text-align:center;font-weight: bold;">Delivered ✔</span>' ; }
+                    else if ($c['status']==4) { echo '<span style="color:orange;text-align:center;font-weight: bold;">Declined</span>'; }
 
                 ?>
             </td> 
