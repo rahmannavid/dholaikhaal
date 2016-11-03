@@ -14,10 +14,10 @@
                                     <img class="slide-image" src="<?php echo base_url() ?>public/img/banner1.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="<?php echo base_url() ?>public/img/banner2.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="<?php echo base_url() ?>public/img/banner1.jpg" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

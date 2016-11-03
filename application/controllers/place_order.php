@@ -159,6 +159,33 @@ class place_order extends CI_Controller {
         } 
 
     }
+
+    public function user_order_list(){
+
+       if($this->session->userdata('logged_in'))
+        {        
+            $this->load->model('order');
+            $user_id = $this->session->userdata['logged_in']['id'];
+            $user_type = $this->order->get_user_type($user_id);
+
+            $this->load->model('category');
+            $hdata['title']='Product-JDM Original';
+            $hdata['cat'] = $this->category->get_category();
+            $this->load->view('common/header', $hdata);
+            
+            $data['order_list'] = $this->order->get_order_list_by_id($user_id);
+
+            $this->load->view('user_order_list_view',$data);
+            $this->load->view('common/footer');
+           
+        }
+        else
+        {
+          //If no session, redirect to login page
+          redirect('/account/login', 'refresh');
+        } 
+
+    }
     
 }
 

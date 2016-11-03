@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url() ?>">JDM Original</a>
+                <a target="_blank" class="navbar-brand" href="<?php echo base_url() ?>">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,7 +67,7 @@
                         |
                         <a href="<?php echo base_url() ?>index.php/account/registration">Registration</a>
                     <?php } else { ?>
-                        Welcome <?php echo $this->session->userdata['logged_in']['user_name']; ?> |
+                        Welcome <a href="<?php echo base_url() ?>index.php/user_a/user_info_update"> <?php echo $this->session->userdata['logged_in']['user_name']; ?> </a> |
                         <a href="<?php echo base_url() ?>index.php/account/logout">Logout</a>
                     <?php } ?>  
                 </ul>

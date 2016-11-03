@@ -54,7 +54,7 @@
                         <a href="<?php echo base_url() ?>index.php/auction">Auction</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() ?>index.php/place_order/order_list">Your Order</a>
+                        <a href="<?php echo base_url() ?>index.php/place_order/user_order_list">Your Order</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() ?>index.php/contact">Contact</a>
@@ -69,7 +69,7 @@
                     |
                     <a href="<?php echo base_url() ?>index.php/account/registration">Registration</  a>
                 <?php } else { ?>
-                    Welcome <?php echo $this->session->userdata['logged_in']['user_name']; ?> |
+                   Welcome <a href="<?php echo base_url() ?>index.php/user_a/user_info_update"> <?php echo $this->session->userdata['logged_in']['user_name']; ?> </a> |
                     <a href="<?php echo base_url() ?>index.php/account/logout">Logout</a>
                <?php } ?>    
                      

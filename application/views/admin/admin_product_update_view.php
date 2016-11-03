@@ -19,7 +19,7 @@
               
              <input type="text" value = "<?php echo $product->name  ?>"  size="100%" id="input_name" name="input_name" class="form-control chat-input" placeholder="Product name" />
               
-            <textarea size="100%" value = "<?php echo $product->description ?>" rows="5" id="input_description" name="input_description" class="form-control chat-input" placeholder="description" /> <?php echo $product->description ?></textarea>
+            <textarea size="100%" value = "<?php echo $product->description ?>" rows="5" id="input_description" name="input_description" class="form-control chat-input" placeholder="description" /><?php echo $product->description ?></textarea>
               
              <input type="text" value = "<?php echo $product->price  ?>" size="100%" id="input_price" name="input_price" class="form-control chat-input" placeholder="Price" />
               

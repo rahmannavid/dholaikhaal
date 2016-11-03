@@ -28,7 +28,7 @@ class user extends CI_Model{
     }
 
     function get_user_by_id($id){
-       $this -> db -> select('id, name, email, mobile, address');
+       $this -> db -> select('id, name, email, mobile, address, password');
        $this -> db -> from('user');
        $this -> db -> where('id', $id);
 
@@ -83,6 +83,20 @@ class user extends CI_Model{
         $this->load->database();
         $query = $this->db->query('SELECT * FROM user');
         return $query->result_array();
+     }
+
+     function update_user($user) {
+        $this->load->database();
+        $data = array(
+            'name' =>  $user['input_name'],
+            'mobile' => $user['input_mobile'],
+            'email' => $user['input_email'],
+            'password' => $user['input_password'],
+            'address' => $user['input_address'],
+           
+        );
+        $this->db->where('id',$user['input_id']);
+        $this->db->update('user', $data);
      }
     
 }

@@ -15,10 +15,7 @@ class product extends CI_Controller {
         $bdata['product'] = $this->productm->get_product_by_id($id);
         $bdata['productimg'] = $this->productm->get_product_image_by_id($id);
         
-        $this->load->view('product',$bdata);
-        
-        
-        
+        $this->load->view('product',$bdata);   
         $this->load->view('common/footer');
 	}
     
